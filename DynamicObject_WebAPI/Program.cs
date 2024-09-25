@@ -23,6 +23,17 @@ namespace DynamicObject_WebAPI
                 app.UseSwaggerUI();
             }
 
+            if (!app.Environment.IsDevelopment())
+            {
+                // Geliþtirme dýþýndaki ortamlarda genel hata sayfasýný kullanýr
+                app.UseExceptionHandler("/error");
+            }
+            else
+            {
+                // Geliþtirme ortamýnda detaylý hata sayfasý gösterilir
+                app.UseDeveloperExceptionPage();
+            }
+
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
