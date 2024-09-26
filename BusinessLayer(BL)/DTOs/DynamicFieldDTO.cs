@@ -11,7 +11,6 @@ namespace BusinessLayer_BL_.DTOs
     {
         public string FieldName { get; set; }
         public string FieldValue { get; set; }
-
         public int DynamicObjectId { get; set; }
         public virtual DynamicObject DynamicObject { get; set; }
     }
