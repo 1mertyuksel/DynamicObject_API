@@ -1,4 +1,5 @@
-﻿using DataAccesLayer_DAL_.Concrete;
+﻿using DataAccesLayer_DAL_.Abstract;
+using DataAccesLayer_DAL_.Concrete;
 using EntityLayer.Models.Abstract;
 using System;
 using System.Collections.Generic;
