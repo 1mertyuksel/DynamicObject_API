@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using BusinessLayer_BL_.Concrete;
 using BusinessLayer_BL_.DTOs;
 using DataAccesLayer_DAL_.Abstract;
 using EntityLayer.Models.Concrete;
@@ -12,10 +13,10 @@ namespace DynamicObject_WebAPI.Controllers
     [Route("api/[controller]")]
     public class TransactionLogsController : ControllerBase
     {
-        private readonly IRepository<TransactionLog> _repository;
+        private readonly TransactionLogService<TransactionLog> _repository;
         private readonly IMapper _mapper;
 
-        public TransactionLogsController(IRepository<TransactionLog> repository, IMapper mapper)
+        public TransactionLogsController(TransactionLogService<TransactionLog> repository, IMapper mapper)
         {
             _repository = repository;
             _mapper = mapper;

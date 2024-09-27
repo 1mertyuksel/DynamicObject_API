@@ -1,5 +1,7 @@
 using BusinessLayer_BL_.Concrete;
 using BusinessLayer_BL_.MapperConfig;
+using DataAccesLayer_DAL_.Abstract;
+using DataAccesLayer_DAL_.Concrete;
 using DataAccesLayer_DAL_.DbContexts;
 using EntityLayer.Models.Concrete;
 using Microsoft.EntityFrameworkCore;
@@ -12,18 +14,17 @@ namespace DynamicObject_WebAPI
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container
             builder.Services.AddDbContext<AppDbContext>(options =>
                 options.UseMySQL(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-            // Register services
+       
+
             builder.Services.AddScoped<DynamicObjectService<DynamicObject>>();
             builder.Services.AddScoped<DynamicFieldService<DynamicField>>();
             builder.Services.AddScoped<TransactionLogService<TransactionLog>>();
             builder.Services.AddAutoMapper(typeof(MappingConfig));
 
             builder.Services.AddControllers();
-
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();

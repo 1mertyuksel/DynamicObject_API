@@ -11,8 +11,8 @@ namespace EntityLayer.Models.Concrete
     {
         public string ObjectName { get; set; }            
         public DateTime? UpdatedAt { get; set; }            
-        public virtual ICollection<DynamicField> DynamicFields { get; set; }
+        public virtual ICollection<DynamicField>? DynamicFields { get; set; }
 
-        public virtual ICollection<TransactionLog> TransactionLogs { get; set; }
+        public virtual ICollection<TransactionLog>? TransactionLogs { get; set; }
     }
 }

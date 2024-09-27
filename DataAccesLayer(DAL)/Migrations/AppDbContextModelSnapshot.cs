@@ -28,7 +28,8 @@ namespace DataAccesLayer_DAL_.Migrations
                     b.Property<DateTime>("CreateDate")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<int>("DynamicObjectId")
+                    b.Property<int?>("DynamicObjectId")
+                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<string>("FieldName")

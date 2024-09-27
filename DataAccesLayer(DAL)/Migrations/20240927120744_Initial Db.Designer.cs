@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataAccesLayer_DAL_.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240925132636_First Migration")]
-    partial class FirstMigration
+    [Migration("20240927120744_Initial Db")]
+    partial class InitialDb
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -31,7 +31,8 @@ namespace DataAccesLayer_DAL_.Migrations
                     b.Property<DateTime>("CreateDate")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<int>("DynamicObjectId")
+                    b.Property<int?>("DynamicObjectId")
+                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<string>("FieldName")

@@ -14,7 +14,7 @@ namespace EntityLayer.Models.Concrete
         public string FieldName { get; set; }             
         public string FieldValue { get; set; }            
 
-        public int DynamicObjectId { get; set; }     
+        public int? DynamicObjectId { get; set; }     
         public virtual DynamicObject DynamicObject { get; set; }
     }
 }

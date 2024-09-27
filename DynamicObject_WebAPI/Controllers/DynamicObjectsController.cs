@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using BusinessLayer_BL_.Concrete;
 using BusinessLayer_BL_.DTOs;
 using DataAccesLayer_DAL_.Abstract;
 using EntityLayer.Models.Concrete;
@@ -10,10 +11,10 @@ namespace DynamicObject_WebAPI.Controllers
     [Route("api/[controller]")]
     public class DynamicObjectController : ControllerBase
     {
-        private readonly IRepository<DynamicObject> _dynamicObjectRepository;
+        private readonly DynamicObjectService<DynamicObject> _dynamicObjectRepository;
         private readonly IMapper _mapper;
 
-        public DynamicObjectController(IRepository<DynamicObject> dynamicObjectRepository, IMapper mapper)
+        public DynamicObjectController(DynamicObjectService<DynamicObject> dynamicObjectRepository, IMapper mapper)
         {
             _dynamicObjectRepository = dynamicObjectRepository;
             _mapper = mapper;
