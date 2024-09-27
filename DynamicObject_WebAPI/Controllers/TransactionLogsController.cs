@@ -21,7 +21,6 @@ namespace DynamicObject_WebAPI.Controllers
             _mapper = mapper;
         }
 
-        // GET: api/transactionlog
         [HttpGet]
         public async Task<ActionResult<IEnumerable<TransactionLogDTO>>> GetAll()
         {
@@ -30,7 +29,6 @@ namespace DynamicObject_WebAPI.Controllers
             return Ok(logDTOs);
         }
 
-        // GET: api/transactionlog/{id}
         [HttpGet("{id}")]
         public async Task<ActionResult<TransactionLogDTO>> GetById(int id)
         {
@@ -43,7 +41,6 @@ namespace DynamicObject_WebAPI.Controllers
             return Ok(logDTO);
         }
 
-        // POST: api/transactionlog
         [HttpPost]
         public async Task<ActionResult<TransactionLogDTO>> Create([FromBody] TransactionLogDTO transactionLogDTO)
         {
@@ -57,7 +54,6 @@ namespace DynamicObject_WebAPI.Controllers
             return CreatedAtAction(nameof(GetById), new { id = transactionLog.Id }, transactionLogDTO);
         }
 
-        // PUT: api/transactionlog/{id}
         [HttpPut("{id}")]
         public async Task<IActionResult> Update(int id, [FromBody] TransactionLogDTO transactionLogDTO)
         {
@@ -77,7 +73,6 @@ namespace DynamicObject_WebAPI.Controllers
             return NoContent();
         }
 
-        // DELETE: api/transactionlog/{id}
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {

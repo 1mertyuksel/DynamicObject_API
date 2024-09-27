@@ -21,7 +21,6 @@ namespace DynamicObject_WebAPI.Controllers
             _mapper = mapper;
         }
 
-        // GET: api/dynamicfield
         [HttpGet]
         public async Task<ActionResult<IEnumerable<DynamicFieldDTO>>> GetAll()
         {
@@ -30,7 +29,6 @@ namespace DynamicObject_WebAPI.Controllers
             return Ok(fieldDTOs);
         }
 
-        // GET: api/dynamicfield/{id}
         [HttpGet("{id}")]
         public async Task<ActionResult<DynamicFieldDTO>> GetById(int id)
         {
@@ -43,7 +41,6 @@ namespace DynamicObject_WebAPI.Controllers
             return Ok(fieldDTO);
         }
 
-        // POST: api/dynamicfield
         [HttpPost]
         public async Task<ActionResult<DynamicFieldDTO>> CreateDynamicField([FromBody] DynamicFieldDTO dynamicFieldDTO)
         {
@@ -57,7 +54,6 @@ namespace DynamicObject_WebAPI.Controllers
             return CreatedAtAction(nameof(GetById), new { id = dynamicField.Id }, dynamicFieldDTO);
         }
 
-        // PUT: api/dynamicfield/{id}
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateDynamicField(int id, [FromBody] DynamicFieldDTO dynamicFieldDTO)
         {
@@ -77,7 +73,6 @@ namespace DynamicObject_WebAPI.Controllers
             return NoContent();
         }
 
-        // DELETE: api/dynamicfield/{id}
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteDynamicField(int id)
         {

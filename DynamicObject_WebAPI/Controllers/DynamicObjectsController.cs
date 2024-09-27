@@ -39,7 +39,6 @@ namespace DynamicObject_WebAPI.Controllers
             return Ok(dynamicObjectDTO);
         }
 
-        // Add new DynamicObject
         [HttpPost]
         public async Task<IActionResult> CreateDynamicObject(DynamicObjectDTO dynamicObjectDTO)
         {
@@ -48,7 +47,6 @@ namespace DynamicObject_WebAPI.Controllers
             return CreatedAtAction(nameof(GetById), new { id = dynamicObject.Id }, dynamicObjectDTO);
         }
 
-        // Update DynamicObject
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateDynamicObject(int id, DynamicObjectDTO dynamicObjectDTO)
         {
@@ -58,12 +56,11 @@ namespace DynamicObject_WebAPI.Controllers
                 return NotFound();
             }
 
-            _mapper.Map(dynamicObjectDTO, existingDynamicObject);  // Map DTO to existing entity
+            _mapper.Map(dynamicObjectDTO, existingDynamicObject);  
             await _dynamicObjectRepository.UpdateAsync(existingDynamicObject);
             return NoContent();
         }
 
-        // Delete DynamicObject
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteDynamicObject(int id)
         {

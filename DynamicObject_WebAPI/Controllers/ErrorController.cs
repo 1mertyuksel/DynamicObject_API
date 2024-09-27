@@ -7,11 +7,10 @@ namespace DynamicObject_WebAPI.Controllers
     [Route("api/[controller]")]
     public class ErrorController : ControllerBase
     {
-        // HTTP POST yöntemi olarak tanımlandı
-        [HttpPost("handle-error")] // Örneğin /api/error/handle-error
+        [HttpPost("handle-error")] 
         public IActionResult HandleError()
         {
-            // Genel bir hata mesajı veya özel hata yönetimi
+            
             return Problem("An unexpected error occurred.");
         }
     }
